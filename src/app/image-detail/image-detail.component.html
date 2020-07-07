@@ -1,0 +1,18 @@
+<div class="container-fluid" style="width: 70%;">
+    <img [src]="image.src" [alt]="image.id" class="img-fluid">
+    <form (submit)="onSubmit(f)" #f=ngForm>
+        <div class="form-group">
+            <label for="rating">Rating</label>
+            <input type="range" class="form-control-range" name="rating" step="10" ngModel>
+          </div>
+        <div class="form-group">
+          <label for="">Username</label>
+          <input type="text" class="form-control" name="userName" ngModel>
+        </div>
+        <div class="form-group">
+            <label for="reason">Reason</label>
+            <textarea class="form-control" name="reason" rows="3" ngModel></textarea>
+          </div>
+        <button type="submit" class="btn btn-success">Save</button>
+      </form>
+</div>

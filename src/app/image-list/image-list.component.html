@@ -1,0 +1,27 @@
+<div
+  class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5"
+>
+  <div class="col mb-4" *ngFor="let photo of photos; let i = index">
+    <div class="card" (click)="onImageClicked(i)" style="border: 1px solid #ccc; min-height: 250px;">
+      <img [src]="photo.src" class="card-img-top" [alt]="photo.id" style="max-height: 200px;"/>
+      <div class="card-body">
+        <h5 class="card-title">Rating {{ photo.rating }}</h5>
+        <p *ngIf="photo.ratingBy != ''" class="card-text">Rated by : {{ photo.ratingBy }}</p>
+        <p *ngIf="photo.reason != ''" class="card-text">Reason : {{ photo.reason }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <nav class="d-flex justify-content-center">
+    <ul class="pagination">
+      <li class="page-item">
+        <button class="btn btn-primary" (click)="onPrevPage()" [disabled]="pageNo === 1"><<</button>
+      </li>
+      <li class="page-item">
+        <button class="btn btn-primary" (click)="onNextPage()" [disabled]="pageNo === maxPages">>></button>
+      </li>
+    </ul>
+  </nav>
+</div>
