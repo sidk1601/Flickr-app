@@ -13,6 +13,7 @@ import { Image } from './../image.model';
 export class ImageDetailComponent implements OnInit {
   id: string;
   image: Image;
+  rating = 50;
 
   constructor(private imageService: ImageService,
               private route: ActivatedRoute,

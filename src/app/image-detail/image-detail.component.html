@@ -3,7 +3,8 @@
     <form (submit)="onSubmit(f)" #f=ngForm>
         <div class="form-group">
             <label for="rating">Rating</label>
-            <input type="range" class="form-control-range" name="rating" step="10" ngModel>
+            <p style="display: inline; margin-left: 20px;">{{ rating/10 }}</p>
+            <input type="range" class="form-control-range" [(ngModel)]="rating" name="rating" step="10" ngModel>
           </div>
         <div class="form-group">
           <label for="">Username</label>
